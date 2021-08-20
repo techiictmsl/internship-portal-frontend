@@ -1,10 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, NavLink } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import  logo  from "../assests/logo.png"
 import "../styles/Signup.css"
 function Signup() {
     return (
-        <>
+        <div>
             <div className="signup-form">
                 <form action="/examples/actions/confirmation.php" method="post">
                 <div className="row">
@@ -95,7 +95,7 @@ function Signup() {
                    <figure>
                     <img src={logo} alt="error" srcset="" />
                    </figure> 
-                   <div className="text-center">Already have an account? <Router> <NavLink to="/login">Login here</NavLink></Router></div>
+                   <div className="text-center">Already have an account?  <Link to="/Login">Login here</Link></div>
                 </div>
                 </div>
                 </div>
@@ -104,7 +104,7 @@ function Signup() {
 
             </div>
              
-        </>
+        </div>
     )
 }
 
