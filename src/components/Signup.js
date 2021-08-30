@@ -1,34 +1,41 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
 import logo from "../assets/signup-login/logo.png";
 import "../styles/Signup.css";
+
 function Signup() {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [profession, setProfession] = useState("");
+  const [profession, setProfession] = useState("student");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [checked, setChecked] = useState(true);
-  const [user, setUser] = useState({
-    username: "",
-    email: "",
-    profession: "",
-    phone: "",
-    password: "",
-  });
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUser({
-      username: username,
-      email: email,
-      phone: phone,
-      password: password,
-      profession: profession,
-    });
+
     if (password === confirmpassword) {
       alert("User Signed Up successfully");
+      axios
+        .post("https://arcane-stream-76776.herokuapp.com/signup", {
+          username: username,
+          full_name: username,
+          email: email,
+          passwd: password,
+          role: profession,
+        })
+        .then((res) => {
+          console.log(res.data);
+          history.push("/login");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      console.log(username, email, phone, password, profession);
       setChecked(true);
       setUserName("");
       setEmail("");
@@ -44,11 +51,7 @@ function Signup() {
   return (
     <div className="signup-main">
       <div className="signup-form">
-        <form
-          onSubmit={(e) => {
-            handleSubmit(e);
-          }}
-        >
+        <form onSubmit={(e) => handleSubmit(e)}>
           <div className="row">
             <h2>Sign Up</h2>
             <hr />
@@ -119,16 +122,13 @@ function Signup() {
                       <i className="fa fa-briefcase"></i>
                     </span>
                   </div>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="work"
-                    placeholder="Your Profession"
-                    required="required"
-                    autoComplete="off"
+                  <select
                     onChange={(e) => setProfession(e.target.value)}
-                    value={profession}
-                  />
+                    className="profession-field form-control"
+                  >
+                    <option value="student">Student</option>
+                    <option value="company">Company</option>
+                  </select>
                 </div>
               </div>
               <div className="form-group">
