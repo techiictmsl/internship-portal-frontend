@@ -29,6 +29,8 @@ export default function CompanyDashboard() {
     "internship in Faridabad",
     "internship in Kolkata",
     "internship in Bengaluru",
+  ];
+  const InternshipByStream = [
     "internship in Gurgaon",
     "internship in Bombay",
     "internship in Delhi",
@@ -47,16 +49,18 @@ export default function CompanyDashboard() {
           <div className="company-socials">
             <h2>Connect With Us</h2>
             <div className="social-links">
-              {socialicons.map((icon, index) => (
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  key={index}
-                  href="https://github.com/codeswithroh"
-                >
-                  <img className="svg-icons" src={icon} alt="social-icons" />
-                </a>
-              ))}
+              {socialicons.map((icon, index) => {
+                return (
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    key={index}
+                    href="https://github.com/codeswithroh"
+                  >
+                    <img className="svg-icons" src={icon} alt="social-icons" />
+                  </a>
+                );
+              })}
             </div>
           </div>
           <div className="company-dashboard">
@@ -118,16 +122,20 @@ export default function CompanyDashboard() {
           <div className="company-links">
             <h4>Internship by places</h4>
             {InternshipByPlace.map((internship, index) => {
-              if (index < 8) {
-                return <p key={index}>{internship}</p>;
-              }
+              return (
+                <div key={index}>
+                  <p>{internship}</p>
+                </div>
+              );
             })}
             <br />
             <h4>Intership by streams</h4>
-            {InternshipByPlace.map((internship, index) => {
-              if (index > 8) {
-                return <p key={index}>{internship}</p>;
-              }
+            {InternshipByStream.map((internship, index) => {
+              return (
+                <div key={index}>
+                  <p>{internship}</p>
+                </div>
+              );
             })}
           </div>
         </div>
