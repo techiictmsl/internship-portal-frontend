@@ -22,7 +22,6 @@ export default function SignUp() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(username, password);
     // pass this as a form data
     axios
       .post("https://arcane-stream-76776.herokuapp.com/token", formData, config)
@@ -37,9 +36,7 @@ export default function SignUp() {
         localStorage.setItem("tokens", JSON.stringify(newtoken));
         history.push("/demodashboard");
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(() => {});
   };
 
   return (
