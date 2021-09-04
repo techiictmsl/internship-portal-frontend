@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-export default function Dashboard(authorized) {
+export default function Dashboard() {
   const [tokens, settokens] = useState([]);
   let history = useHistory();
   useEffect(() => {
@@ -42,7 +42,9 @@ export default function Dashboard(authorized) {
                 .then((res) => {
                   console.log(res);
                 })
-                .catch(() => {});
+                .catch((err) => {
+                  console.log(err);
+                });
             })
             .catch(() => {
               localStorage.removeItem("tokens");
