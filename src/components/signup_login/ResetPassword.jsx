@@ -18,12 +18,9 @@ export default function ResetPassword() {
         password: password,
       })
       .then(() => {
-        console.log("Your password is changed");
         history.push("/login");
       })
-      .catch(() => {
-        console.log("There are some errors");
-      });
+      .catch(() => {});
   };
   return (
     <div className="signup-container">

@@ -7,7 +7,6 @@ export default function Dashboard() {
     settokens(JSON.parse(localStorage.getItem("tokens")));
   }, []);
   const handleClick = (e) => {
-    console.log();
     e.preventDefault();
     axios
       .get("https://arcane-stream-76776.herokuapp.com/dashboard", {
@@ -23,7 +22,9 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <h1>This is the demo dashboard</h1>
-      <button onClick={(e) => handleClick(e)}>Get Data</button>
+      <button type="button" onClick={(e) => handleClick(e)}>
+        Get Data
+      </button>
     </div>
   );
 }

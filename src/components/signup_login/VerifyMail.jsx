@@ -16,12 +16,9 @@ export default function VerifyMail() {
         otp: otp,
       })
       .then(() => {
-        alert("Your mail has been verified successfully");
         history.push("/login");
       })
-      .catch(() => {
-        alert("Please enter the correct otp");
-      });
+      .catch(() => {});
   };
   return (
     <div className="signup-container">

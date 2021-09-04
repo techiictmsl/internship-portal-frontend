@@ -13,7 +13,6 @@ export default function ForgetPassword() {
         `https://arcane-stream-76776.herokuapp.com/forgotpassword?email=${email}`
       )
       .then(() => {
-        console.log("Please check your mail, a reset otp has been sent");
         history.push("/resetpassword");
       });
   };

@@ -15,7 +15,6 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, profession, email, password, confirmpassword);
 
     if (password === confirmpassword) {
       axios
@@ -27,7 +26,6 @@ export default function SignUp() {
           role: profession,
         })
         .then((res) => {
-          console.log(res.data);
           axios
             .post(
               `https://arcane-stream-76776.herokuapp.com/verification?email=${email}`
