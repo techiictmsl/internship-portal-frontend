@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/signup_login/SignUp.css";
 import axios from "axios";
-import login from "../../assets/signup-login/login.gif";
+import loginpage from "../../assets/signup-login/login-page.gif";
 import ForgetPassword from "./ForgetPassword";
 import { useHistory } from "react-router-dom";
 
@@ -26,7 +26,6 @@ export default function SignUp() {
     axios
       .post("https://arcane-stream-76776.herokuapp.com/token", formData, config)
       .then((res) => {
-        console.log(res);
         let newtoken = [
           {
             access_token: res.data.access_token,
@@ -96,7 +95,7 @@ export default function SignUp() {
             </form>
           </div>
           <div className="signup-content-right">
-            <img src={login} alt="" />
+            <img src={loginpage} alt="" />
             <p onClick={() => setresetpassword(true)}>
               Forget Password?{" "}
               <span style={{ color: "#A33D3D", cursor: "pointer" }}>
