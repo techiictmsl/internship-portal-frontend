@@ -1,0 +1,208 @@
+.userdashboard-container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url("../assets/Bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.userdashboard-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: 10em 1em;
+}
+/* dashboard-left */
+.userdashboard-left {
+  margin-left: 1.5em;
+}
+.user-resume-container,
+.user-internships {
+  background-color: var(--primary-background);
+  padding: var(--padding);
+  border-radius: 20px;
+}
+.resume-actions,
+.skill-tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.action-item,
+.skill-item {
+  background-color: white;
+  padding: var(--padding);
+  border-radius: 20px;
+  margin-bottom: 2em;
+}
+.action-item > span {
+  margin: 0 0.2em;
+}
+/* resume upload popup */
+.resume-upload-container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2em;
+  z-index: 20;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+.resume-uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+.upload-cancel {
+  display: flex;
+  gap: 1em;
+}
+.upload {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  font-weight: bold;
+  padding: var(--padding);
+  cursor: pointer;
+}
+#resume {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 800px) {
+  #resume {
+    font-size: 0.9rem;
+  }
+  .resume-upload-container {
+    font-size: 1.4rem;
+  }
+  .upload {
+    font-size: 1rem;
+  }
+}
+
+/* dashboard-right */
+.userboard-right {
+  margin-right: 1.5em;
+}
+.active-completed-internships {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 127, 80, 0.479);
+  padding: var(--padding);
+  margin-bottom: 1em;
+  z-index: 10;
+}
+.active-internships > span,
+.completed-internships > span {
+  margin: 0 0.2em;
+}
+.active-internships,
+.completed-internships {
+  cursor: pointer;
+}
+.total-active,
+.total-complete {
+  background-color: white;
+  padding: 0.1em 0.5em;
+  border-radius: 50%;
+}
+.internship-record {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+}
+.position {
+  font-size: 0.9rem;
+}
+.company-name {
+  font-weight: bold;
+}
+/* dashboard-middle */
+.background {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+.user-profile-intro {
+  background-color: white;
+  padding: var(--form-padding);
+  border-radius: 10px;
+}
+.user-profile-details {
+  position: absolute;
+  left: 10em;
+  right: 10em;
+  margin: 0 10em;
+  z-index: 20;
+}
+.user-profile-intro {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1em;
+}
+.label {
+  font-size: var(--font-subheading);
+}
+.edit-heading {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+}
+#about,
+#headline {
+  padding: 0.5em 1em;
+  font-size: var(--font-subheading);
+  width: 27em;
+}
+.save {
+  font-size: var(--font-subheading);
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  padding: var(--padding);
+  cursor: pointer;
+}
+.two-buttons {
+  display: flex;
+  gap: 2em;
+}
+
+/* making it responsive */
+@media screen and (max-width: 800px) {
+  .userdashboard-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .userdashboard-left {
+    margin-left: 0;
+    margin: 0 1em;
+  }
+  .userboard-right {
+    margin-right: 0;
+    margin: 0 1em;
+  }
+  #about,
+  #headline {
+    width: 10em;
+  }
+  .user-profile-details {
+    left: 0em;
+    right: 0em;
+    margin: 0 1em;
+  }
+}

@@ -1,3 +1,11 @@
+:root {
+  --primary-background: rgba(255, 255, 255, 0.4);
+  --font-heading: 3rem;
+  --font-subheading: 1.4rem;
+  --padding: 0.5em 1em;
+  --form-padding: 0.5em 1.5em;
+  --margin: 1em 0;
+}
 .App {
   min-height: 100vh;
   margin: 0;
