@@ -7,6 +7,7 @@ import VerifyMail from "./components/signup_login/VerifyMail";
 import ResetPassword from "./components/signup_login/ResetPassword";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
+import UserDashboard from "./components/UserDashboard";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/verifymail" component={VerifyMail} />
           <Route path="/login" component={Login} />
           <Route path="/demodashboard" component={Dashboard} />
+          <Route path="/userdashboard" component={UserDashboard} />
           <Route path="/resetpassword" component={ResetPassword} />
           <Route path="/" exact component={Navbar} />
         </Switch>
