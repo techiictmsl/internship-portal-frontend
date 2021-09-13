@@ -5,11 +5,25 @@ import "../styles/UserDashboard.css";
 
 export default function UserDashboard() {
   const [active, setactive] = useState(true);
-  const [newresume, setnewresume] = useState(true);
+  const [newresume, setnewresume] = useState(false);
   const [edit, setedit] = useState(false);
   const [headline, setheadline] = useState("");
   const [about, setabout] = useState("");
   const [resume, setresume] = useState("");
+
+  // academic qualifications
+  const [academic, setacademic] = useState(false);
+  const [collegename, setcollegename] = useState("");
+  const [yearofentering, setyearofentering] = useState("");
+  const [yearofremoval, setyearofremoval] = useState("");
+  const [stream, setstream] = useState("");
+
+  // projects
+  const [project, setproject] = useState(false);
+  const [projecttitle, setprojecttitle] = useState("");
+  const [projectdescription, setprojectdescription] = useState("");
+  const [projecturl, setprojecturl] = useState("");
+
   const handleResume = (e) => {
     e.preventDefault();
     console.log(resume);
@@ -51,6 +65,166 @@ export default function UserDashboard() {
       <Navbar />
       {edit ? <div className="background"></div> : <></>}
       {newresume ? <div className="background"></div> : <></>}
+
+      {/* academic- background */}
+      {academic ? <div className="background"></div> : <></>}
+
+      {/* academic form */}
+      {academic ? (
+        <div className="academic-form">
+          <form className="academic-items">
+            <div className="form-inputs">
+              <label className="label" htmlFor="college-name">
+                College/School Name
+              </label>
+              <input
+                type="text"
+                placeholder="write here..."
+                id="college-name"
+                name="college-name"
+                value={collegename}
+                onChange={(e) => setcollegename(e.target.value)}
+                required={true}
+                minLength={5}
+                maxLength={40}
+              />
+            </div>
+            <div className="form-inputs">
+              <label className="label" htmlFor="year-of-entering">
+                Year of Entering
+              </label>
+              <input
+                type="number"
+                placeholder="write here..."
+                id="year-of-entering"
+                name="year-of-entering"
+                value={yearofentering}
+                onChange={(e) => setyearofentering(e.target.value)}
+                required={true}
+                maxLength={4}
+                minLength={4}
+              />
+            </div>
+            <div className="form-inputs">
+              <label className="label" htmlFor="year-of-completion">
+                Year of Completion
+              </label>
+              <input
+                type="number"
+                placeholder="write here..."
+                id="year-of-completion"
+                name="year-of-completion"
+                value={yearofremoval}
+                onChange={(e) => setyearofremoval(e.target.value)}
+                required={true}
+                maxLength={4}
+                minLength={4}
+              />
+            </div>
+            <div className="form-inputs">
+              <label className="label" htmlFor="stream">
+                Stream
+              </label>
+              <input
+                type="text"
+                placeholder="write here..."
+                id="stream"
+                name="stream"
+                value={stream}
+                onChange={(e) => setstream(e.target.value)}
+                required={true}
+                minLength={5}
+                maxLength={40}
+              />
+            </div>
+            <button className="academic" type="submit">
+              Submit
+            </button>
+            <button
+              className="academic"
+              onClick={() => setacademic(false)}
+              type="button"
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      ) : (
+        <></>
+      )}
+
+      {/* project-background */}
+      {project ? <div className="background"></div> : <></>}
+
+      {/* project-form */}
+      {project ? (
+        <div className="academic-form">
+          <form className="academic-items">
+            <div className="form-inputs">
+              <label className="label" htmlFor="project-title">
+                Title
+              </label>
+              <input
+                type="text"
+                placeholder="write here..."
+                id="project-title"
+                name="project-title"
+                value={projecttitle}
+                onChange={(e) => setprojecttitle(e.target.value)}
+                required={true}
+                minLength={5}
+                maxLength={40}
+              />
+            </div>
+            <div className="form-inputs">
+              <label className="label" htmlFor="project-description">
+                Description
+              </label>
+              <textarea
+                style={{ resize: "none" }}
+                placeholder="write here..."
+                id="project-description"
+                name="project-description"
+                value={projectdescription}
+                onChange={(e) => setprojectdescription(e.target.value)}
+                required={true}
+                maxLength={100}
+                minLength={4}
+                cols="30"
+                rows="5"
+              ></textarea>
+            </div>
+            <div className="form-inputs">
+              <label className="label" htmlFor="project-url">
+                Project Url
+              </label>
+              <input
+                type="url"
+                placeholder="write here..."
+                id="project-url"
+                name="project-url"
+                value={projecturl}
+                onChange={(e) => setprojecturl(e.target.value)}
+                maxLength={80}
+                minLength={4}
+              />
+            </div>
+            <button className="academic" type="submit">
+              Submit
+            </button>
+            <button
+              className="academic"
+              onClick={() => setproject(false)}
+              type="button"
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      ) : (
+        <></>
+      )}
+
       <div className="userdashboard-content">
         <div className="userdashboard-left">
           <div className="user-resume-container">
@@ -166,7 +340,7 @@ export default function UserDashboard() {
                 </form>
               </div>
             ) : (
-              <div className="user-initial">
+              <div style={{ marginLeft: "1.2em" }} className="user-initial">
                 <h1>Rohit Purkait</h1>
                 <p style={{ cursor: "pointer" }} onClick={() => setedit(true)}>
                   Edit Profile
@@ -174,6 +348,110 @@ export default function UserDashboard() {
               </div>
             )}
           </div>
+          {/* bootstrap accordion */}
+          <div className="accordion" id="accordionExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingOne">
+                <button
+                  className="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Academic Qualifications
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                className="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div className="accordion-body">
+                  <div
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setacademic(true)}
+                    className="action-item"
+                  >
+                    <span>
+                      <i className="fas fa-plus"></i>
+                    </span>
+                    <span>Add new</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingTwo">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Certificates
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div className="accordion-body">
+                  <div
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setnewresume(true)}
+                    className="action-item"
+                  >
+                    <span>
+                      <i className="fas fa-plus"></i>
+                    </span>
+                    <span>Add new</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingThree">
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Projects
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div className="accordion-body">
+                  <div
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setproject(true)}
+                    className="action-item"
+                  >
+                    <span>
+                      <i className="fas fa-plus"></i>
+                    </span>
+                    <span>Add new</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* end of accordion */}
         </div>
         <div className="userboard-right">
           <div className="user-internships">

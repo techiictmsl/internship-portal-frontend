@@ -31,6 +31,8 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 2em;
+  /* flex-direction: column; */
+  margin-top: 0.5em;
 }
 .action-item,
 .skill-item {
@@ -43,7 +45,8 @@
   margin: 0 0.2em;
 }
 /* resume upload popup */
-.resume-upload-container {
+.resume-upload-container,
+.academic-form {
   min-height: 100vh;
   display: grid;
   place-items: center;
@@ -79,6 +82,35 @@
   font-size: 1.2rem;
 }
 
+/* academic-form */
+.academic-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: white;
+  padding: 1em 1.5em;
+  border-radius: 10px;
+}
+#college-name,
+#year-of-entering,
+#year-of-completion,
+#stream {
+  width: 20em;
+  padding: 0.5em;
+  font-size: 1.4rem;
+}
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+.academic {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 0.2em 2em;
+}
+
 @media screen and (max-width: 800px) {
   #resume {
     font-size: 0.9rem;
@@ -87,6 +119,39 @@
     font-size: 1.4rem;
   }
   .upload {
+    font-size: 1rem;
+  }
+  #college-name,
+  #year-of-entering,
+  #year-of-completion,
+  #stream {
+    width: 15em;
+    font-size: 1rem;
+  }
+  .label {
+    font-size: 1.5rem !important;
+  }
+  .academic {
+    font-size: 1.2rem !important;
+  }
+  .academic-items {
+    padding: 1em;
+  }
+}
+
+/* project-form */
+#project-title,
+#project-description,
+#project-url {
+  width: 20em;
+  padding: 0.5em;
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 800px) {
+  #project-title,
+  #project-description,
+  #project-url {
+    width: 16em;
     font-size: 1rem;
   }
 }
@@ -157,7 +222,7 @@
   gap: 1em;
 }
 .label {
-  font-size: var(--font-subheading);
+  font-size: 1.6rem;
 }
 .edit-heading {
   font-size: 2.5rem;
@@ -182,6 +247,12 @@
   gap: 2em;
 }
 
+/* accordions */
+.accordion {
+  width: 40em;
+  margin: 0 1em;
+}
+
 /* making it responsive */
 @media screen and (max-width: 800px) {
   .userdashboard-content {
@@ -204,5 +275,12 @@
     left: 0em;
     right: 0em;
     margin: 0 1em;
+  }
+  .accordion {
+    width: 18em;
+    margin-bottom: 1em;
+  }
+  .user-details {
+    margin: 1em 0;
   }
 }
