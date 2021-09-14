@@ -262,7 +262,11 @@ export default function UserDashboard() {
             <div className="resume-part">
               <h2>Resume</h2>
               <div className="resume-actions">
-                <div onClick={() => setnewresume(true)} className="action-item">
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setnewresume(true)}
+                  className="action-item"
+                >
                   <span>
                     <i className="fas fa-plus"></i>
                   </span>
@@ -341,7 +345,7 @@ export default function UserDashboard() {
               </div>
             ) : (
               <div style={{ marginLeft: "1.2em" }} className="user-initial">
-                <h1>Rohit Purkait</h1>
+                <h1 style={{ fontWeight: "bold" }}>Rohit Purkait</h1>
                 <p style={{ cursor: "pointer" }} onClick={() => setedit(true)}>
                   Edit Profile
                 </p>
@@ -357,10 +361,10 @@ export default function UserDashboard() {
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
-                  aria-expanded="true"
+                  aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  Academic Qualifications
+                  <h4>Academic Qualifications</h4>
                 </button>
               </h2>
               <div
@@ -393,7 +397,7 @@ export default function UserDashboard() {
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Certificates
+                  <h4>Certificates</h4>
                 </button>
               </h2>
               <div
@@ -426,7 +430,7 @@ export default function UserDashboard() {
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  Projects
+                  <h4>Projects</h4>
                 </button>
               </h2>
               <div
@@ -502,7 +506,7 @@ export default function UserDashboard() {
                           </span>
                         </div>
                         <span>
-                          <button>
+                          <button className="view-button">
                             <i className="fas fa-download"></i>
                             <span>view</span>
                           </button>
@@ -528,7 +532,7 @@ export default function UserDashboard() {
                           </span>
                         </div>
                         <span>
-                          <button>
+                          <button className="view-button">
                             <i className="fas fa-download"></i>
                             <span>view</span>
                           </button>

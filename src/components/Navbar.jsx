@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [appear, setAppear] = useState(false);
@@ -7,7 +8,7 @@ export default function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar-logo">
-          <h1>Philips</h1>
+          <h1>IIC</h1>
         </div>
         <div className="navbar-content">
           <div className="navbar-items">
@@ -18,22 +19,22 @@ export default function Navbar() {
             <i className="fas fa-globe"></i>
             <p>connection</p>
           </div>
-          <div className="navbar-items">
-            <i className="fas fa-comments"></i>
-            <p>feedback</p>
-          </div>
-          <div className="navbar-items">
-            <i className="fas fa-bell"></i>
-            <p>notification</p>
-          </div>
-          <div className="navbar-items">
+          <Link
+            style={{ color: "black", textDecoration: "none" }}
+            to="/userdashboard"
+            className="navbar-items"
+          >
             <i className="fas fa-user"></i>
             <p>user</p>
-          </div>
-          <div className="navbar-items">
-            <i className="fas fa-hands-helping"></i>
-            <p>help</p>
-          </div>
+          </Link>
+          <Link
+            style={{ color: "black", textDecoration: "none" }}
+            to="/signup"
+            className="navbar-items"
+          >
+            <i className="fas fa-lock"></i>
+            <p>signup/login</p>
+          </Link>
           <div
             onClick={() => setAppear(!appear)}
             className="navbar-items-mobile"
@@ -53,19 +54,10 @@ export default function Navbar() {
             <p>Home</p>
           </div>
           <div className="navbar-mobile-content-items">
-            <p>About</p>
+            <p>Connection</p>
           </div>
           <div className="navbar-mobile-content-items">
-            <p>Connections</p>
-          </div>
-          <div className="navbar-mobile-content-items">
-            <p>Feedback</p>
-          </div>
-          <div className="navbar-mobile-content-items">
-            <p>Help</p>
-          </div>
-          <div className="navbar-mobile-content-items">
-            <p>Messaging</p>
+            <p>User</p>
           </div>
         </div>
       ) : (
