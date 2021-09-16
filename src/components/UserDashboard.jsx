@@ -11,6 +11,8 @@ export default function UserDashboard() {
   const [about, setabout] = useState("");
   const [resume, setresume] = useState("");
 
+  // username
+
   // academic qualifications
   const [academic, setacademic] = useState(false);
   const [collegename, setcollegename] = useState("");
@@ -79,6 +81,7 @@ export default function UserDashboard() {
               </label>
               <input
                 type="text"
+                className="input-style"
                 placeholder="write here..."
                 id="college-name"
                 name="college-name"
@@ -95,6 +98,7 @@ export default function UserDashboard() {
               </label>
               <input
                 type="number"
+                className="input-style"
                 placeholder="write here..."
                 id="year-of-entering"
                 name="year-of-entering"
@@ -111,6 +115,7 @@ export default function UserDashboard() {
               </label>
               <input
                 type="number"
+                className="input-style"
                 placeholder="write here..."
                 id="year-of-completion"
                 name="year-of-completion"
@@ -127,6 +132,7 @@ export default function UserDashboard() {
               </label>
               <input
                 type="text"
+                className="input-style"
                 placeholder="write here..."
                 id="stream"
                 name="stream"
@@ -166,6 +172,7 @@ export default function UserDashboard() {
               </label>
               <input
                 type="text"
+                className="input-style"
                 placeholder="write here..."
                 id="project-title"
                 name="project-title"
@@ -181,6 +188,7 @@ export default function UserDashboard() {
                 Description
               </label>
               <textarea
+                className="input-style"
                 style={{ resize: "none" }}
                 placeholder="write here..."
                 id="project-description"
@@ -200,6 +208,7 @@ export default function UserDashboard() {
               </label>
               <input
                 type="url"
+                className="input-style"
                 placeholder="write here..."
                 id="project-url"
                 name="project-url"
@@ -260,7 +269,7 @@ export default function UserDashboard() {
               <></>
             )}
             <div className="resume-part">
-              <h2>Resume</h2>
+              <h2 className="text-3xl font-bold">Resume</h2>
               <div className="resume-actions">
                 <div
                   style={{ cursor: "pointer" }}
@@ -288,7 +297,7 @@ export default function UserDashboard() {
             </div>
             <hr />
             <div className="user-skills">
-              <h2>Skills</h2>
+              <h2 className="text-3xl font-bold mt-4">Skills</h2>
               <div className="skill-tags">
                 <div className="skill-item">Leadership</div>
                 <div className="skill-item">Marketing</div>
@@ -302,12 +311,13 @@ export default function UserDashboard() {
             {edit ? (
               <div className="user-profile-details">
                 <form className="user-profile-intro">
-                  <h2 className="edit-heading">Edit Intro</h2>
+                  <h2 className="edit-heading mt-2 font-bold">Edit Intro</h2>
                   <label className="label" htmlFor="headline">
                     Headline
                   </label>
                   <input
                     type="text"
+                    className="input-style"
                     id="headline"
                     name="headline"
                     value={headline}
@@ -322,6 +332,7 @@ export default function UserDashboard() {
                   <input
                     type="text"
                     id="about"
+                    className="input-style"
                     name="about"
                     value={about}
                     onChange={(e) => setabout(e.target.value)}
@@ -345,7 +356,9 @@ export default function UserDashboard() {
               </div>
             ) : (
               <div style={{ marginLeft: "1.2em" }} className="user-initial">
-                <h1 style={{ fontWeight: "bold" }}>Rohit Purkait</h1>
+                <h1 className="text-3xl" style={{ fontWeight: "bold" }}>
+                  Rohit Purkait
+                </h1>
                 <p style={{ cursor: "pointer" }} onClick={() => setedit(true)}>
                   Edit Profile
                 </p>
@@ -353,7 +366,7 @@ export default function UserDashboard() {
             )}
           </div>
           {/* bootstrap accordion */}
-          <div className="accordion" id="accordionExample">
+          <div className="accordion mt-4 mb-8 sm:my-4" id="accordionExample">
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingOne">
                 <button
@@ -460,7 +473,7 @@ export default function UserDashboard() {
         <div className="userboard-right">
           <div className="user-internships">
             <div className="internship-dashboard-heading">
-              <h2>Dashboard</h2>
+              <h2 className="text-3xl font-bold my-2">Dashboard</h2>
             </div>
             <div className="active-completed-internships">
               <div
@@ -493,7 +506,7 @@ export default function UserDashboard() {
                 <div className="internships-content">
                   {companyname.map((company, index) => {
                     return (
-                      <div className="internship-record" key={index}>
+                      <div className="internship-record my-4" key={index}>
                         <div>
                           <span className="number">{index + 1}. </span>
                           <span className="company-name-details">
@@ -519,7 +532,7 @@ export default function UserDashboard() {
                 <div className="internships-content-completed">
                   {companyname.map((company, index) => {
                     return (
-                      <div className="internship-record" key={index}>
+                      <div className="internship-record my-4" key={index}>
                         <div>
                           <span className="number">{index}. </span>
                           <span className="company-name-details">

@@ -50,7 +50,7 @@ export default function SignUp() {
       )}
       {resetpassword ? <ForgetPassword /> : <></>}
       <div className="signup-main">
-        <h1 className="signup-heading">LOGIN</h1>
+        <h1 className="signup-heading text-3xl sm:text-4xl">LOGIN</h1>
         <hr style={{ width: "50%", margin: "0 auto 1em auto" }} />
         <div className="signup-content login-content">
           <div className="signup-content-left">

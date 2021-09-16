@@ -8,7 +8,7 @@ export default function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar-logo">
-          <h1>IIC</h1>
+          <h1 className="text-2xl sm:text-4xl">IIC</h1>
         </div>
         <div className="navbar-content">
           <div className="navbar-items">
@@ -50,13 +50,13 @@ export default function Navbar() {
       {/* for mobile */}
       {appear ? (
         <div className="navbar-mobile-content">
-          <div className="navbar-mobile-content-items">
+          <div className="navbar-mobile-content-items my-2">
             <p>Home</p>
           </div>
-          <div className="navbar-mobile-content-items">
+          <div className="navbar-mobile-content-items my-2">
             <p>Connection</p>
           </div>
-          <div className="navbar-mobile-content-items">
+          <div className="navbar-mobile-content-items my-2">
             <p>User</p>
           </div>
         </div>

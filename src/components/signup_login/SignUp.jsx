@@ -55,7 +55,7 @@ export default function SignUp() {
   return (
     <div className="signup-container">
       <div className="signup-main">
-        <h1 className="signup-heading">SIGN UP</h1>
+        <h1 className="signup-heading text-3xl sm:text-4xl">SIGN UP</h1>
         <hr style={{ width: "50%", margin: "0 auto 1em auto" }} />
         <div className="signup-content">
           <div className="signup-content-left">
