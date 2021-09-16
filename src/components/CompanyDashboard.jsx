@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/UserDashboard.css";
 import Navbar from "./Navbar";
 import { Tab } from "@headlessui/react";
+import { Link } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -127,8 +128,7 @@ export default function CompanyDashboard() {
                             <li>&middot;</li>
                             <li>{post.stipended}</li>
                           </ul>
-                          <a
-                            href="#"
+                          <Link
                             className={classNames(
                               "absolute inset-0 rounded-md",
                               "focus:z-10 focus:outline-none focus:ring-2 ring-blue-400"
