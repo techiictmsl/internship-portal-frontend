@@ -6,6 +6,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  font-family: "Exo", sans-serif;
 }
 .userdashboard-content {
   display: flex;
@@ -23,6 +24,15 @@
   background-color: var(--primary-background);
   padding: var(--padding);
   border-radius: 20px;
+  box-shadow: 0px 100px 101px rgba(0, 0, 0, 0.12),
+    0px 41.7776px 42.1954px rgba(0, 0, 0, 0.0862625),
+    0px 22.3363px 22.5597px rgba(0, 0, 0, 0.0715329),
+    0px 12.5216px 12.6468px rgba(0, 0, 0, 0.06),
+    0px 6.6501px 6.7166px rgba(0, 0, 0, 0.0484671),
+    0px 2.76726px 2.79493px rgba(0, 0, 0, 0.0337375);
+}
+.resume-part > h2 {
+  margin: 0.5em 0;
 }
 .resume-actions,
 .skill-tags {
@@ -40,6 +50,12 @@
   padding: var(--padding);
   border-radius: 20px;
   margin-bottom: 2em;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.14),
+    0px 41.7776px 33.4221px rgba(0, 0, 0, 0.10064),
+    0px 22.3363px 17.869px rgba(0, 0, 0, 0.083455),
+    0px 12.5216px 10.0172px rgba(0, 0, 0, 0.07),
+    0px 6.6501px 5.32008px rgba(0, 0, 0, 0.056545),
+    0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0393604);
 }
 .action-item > span {
   margin: 0 0.2em;
@@ -77,6 +93,17 @@
   font-weight: bold;
   padding: var(--padding);
   cursor: pointer;
+  background: rgb(115, 115, 253);
+  color: white;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  border: 2px solid rgb(115, 115, 253);
+  transition: 0.5s;
+}
+.upload:hover {
+  color: rgb(115, 115, 253);
+  background-color: white;
 }
 #resume {
   font-size: 1.2rem;
@@ -108,7 +135,19 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0 auto;
-  padding: 0.2em 2em;
+  padding: 0.5em 6em;
+  background: rgb(115, 115, 253);
+  color: white;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  border: 2px solid rgb(115, 115, 253);
+  transition: 0.5s;
+}
+.academic:hover {
+  background-color: white;
+  color: rgb(115, 115, 253);
+  border: 2px solid rgb(115, 115, 253);
 }
 
 @media screen and (max-width: 800px) {
@@ -157,6 +196,11 @@
 }
 
 /* dashboard-right */
+.view-button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
 .userboard-right {
   margin-right: 1.5em;
 }
@@ -241,6 +285,17 @@
   font-weight: bold;
   padding: var(--padding);
   cursor: pointer;
+  background: rgb(115, 115, 253);
+  color: white;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  border: 2px solid rgb(115, 115, 253);
+  transition: 0.5s;
+}
+.save:hover {
+  color: rgb(115, 115, 253);
+  background-color: white;
 }
 .two-buttons {
   display: flex;
@@ -251,6 +306,9 @@
 .accordion {
   width: 40em;
   margin: 0 1em;
+}
+.accordion-item {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 /* making it responsive */
@@ -278,9 +336,9 @@
   }
   .accordion {
     width: 18em;
-    margin-bottom: 1em;
+    margin-bottom: 5em;
   }
   .user-details {
-    margin: 1em 0;
+    margin: 5em 0 1em 0;
   }
 }

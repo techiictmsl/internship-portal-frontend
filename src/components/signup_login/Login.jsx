@@ -3,7 +3,7 @@ import "../../styles/signup_login/SignUp.css";
 import axios from "axios";
 import loginpage from "../../assets/signup-login/login-page.gif";
 import ForgetPassword from "./ForgetPassword";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 export default function SignUp() {
   const [username, setUserName] = useState("");
@@ -50,8 +50,8 @@ export default function SignUp() {
       )}
       {resetpassword ? <ForgetPassword /> : <></>}
       <div className="signup-main">
-        <h1 className="signup-heading">LOGIN</h1>
-        <hr style={{ width: "50%" }} />
+        <h1 className="signup-heading text-3xl sm:text-4xl">LOGIN</h1>
+        <hr style={{ width: "50%", margin: "0 auto 1em auto" }} />
         <div className="signup-content login-content">
           <div className="signup-content-left">
             <form onSubmit={(e) => handleLogin(e)}>
@@ -102,6 +102,15 @@ export default function SignUp() {
                 <u>Reset Here</u>
               </span>
             </p>
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to="/signup"
+            >
+              Don't have an account?{" "}
+              <span style={{ color: "#A33D3D", cursor: "pointer" }}>
+                <u>Sign Up</u>
+              </span>
+            </Link>
           </div>
         </div>
       </div>
