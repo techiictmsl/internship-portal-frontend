@@ -10,7 +10,7 @@ import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 import UserDashboard from "./components/UserDashboard";
 import CompanyDashboard from "./components/CompanyDashboard";
-
+import NavCollap from "./components/NavCollap";
 function App() {
   return (
     <div className="App">
@@ -24,6 +24,7 @@ function App() {
           <Route path="/companydashboard" component={CompanyDashboard} />
           <Route path="/resetpassword" component={ResetPassword} />
           <Route path="/" exact component={Navbar} />
+          <Route path="/admindashboard" component={NavCollap} />
         </Switch>
       </Router>
     </div>

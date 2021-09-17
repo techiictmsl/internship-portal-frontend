@@ -1,0 +1,303 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(214, 216, 218);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(214, 216, 218);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.Dashboard,
+.logout {
+  font-size: 1.6rem;
+  backdrop-filter: blur(5px);
+  background-color: transparent;
+  padding: 15px 0;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(197, 189, 189);
+}
+.logout {
+  color: rgb(245, 99, 99);
+  margin-top: 20px;
+}
+
+.openbtn {
+  font-size: 1.6rem;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.openbtn:hover {
+  color: rgb(40, 152, 226);
+}
+.closebtn {
+  text-decoration: none;
+  color: rgb(38, 180, 216);
+  cursor: pointer;
+}
+.footerSide {
+  background: transparent;
+  border-top: 1px solid rgb(240, 237, 237);
+  color: rgb(52, 65, 252);
+  font-size: 1.2em;
+  text-align: center;
+  height: 5vh;
+  margin-top: 55vh;
+  margin-bottom: 0;
+  padding: 5px 0;
+}
+.sidebarContent .logo {
+  background: url("../assets/logo.png");
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  height: 50px;
+  width: 180px;
+  border-bottom: 1px solid blanchedalmond;
+}
+.sidebarContent .logo > img {
+  height: 50px;
+  width: 180px;
+}
+.openNav {
+  width: 250px !important;
+}
+#mySidebar {
+  width: 0px;
+}
+.nav {
+  background-color: blue;
+  color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  margin-left: 0px;
+}
+.topHead {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.brandTitle {
+  padding-left: 15px;
+}
+.user {
+  margin-left: auto;
+  padding-right: 10px;
+  position: relative;
+}
+.user button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.user ul {
+  position: absolute;
+  top: 35px;
+  padding: 0px;
+  right: 10px;
+  font-size: 12px;
+  height: 200px;
+  width: 200px;
+  z-index: 12;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(132, 159, 247);
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  transform: translateY(10px);
+}
+.user ul a {
+  text-decoration: none;
+  color: white;
+}
+.user ul a:hover {
+  text-decoration: none;
+  color: blueviolet;
+}
+.user li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.user li:hover {
+  background-color: rgb(193, 225, 252);
+  border-radius: 5px;
+}
+.user button:focus + ul {
+  opacity: 1;
+  pointer-events: all;
+}
+.heading {
+  width: 85vw;
+  font-size: 30px;
+  margin: 20px auto;
+  margin-top: 50px;
+  padding: 15px;
+  color: blue;
+  border-bottom: 1px solid rgb(118, 174, 207);
+}
+.content_admin_dash {
+  height: fit-content;
+  width: 85vw;
+  margin: 20px auto;
+  /* border: 1px solid red; */
+}
+.companyContent {
+  text-align: center;
+  /* border: 1px solid rgb(168, 14, 168); */
+  margin: 25px auto;
+  padding: 5px;
+  border-radius: 15px;
+  height: fit-content;
+  width: 75vw;
+  font-size: 10px;
+  display: flex;
+  background-color: whitesmoke;
+  justify-content: space-between;
+  align-items: center;
+}
+.companyinfo-left {
+  /* border: 1px solid blue; */
+  height: 5vh;
+  width: 23%;
+  font-size: 19px;
+  background: ivory;
+  padding: 7px;
+  border-radius: 5px;
+}
+.companyinfo-middle {
+  /* border: 1px solid blue; */
+  height: fit-content;
+  font-size: 17px;
+  width: 12%;
+  background: ivory;
+  padding: 7px;
+  border-radius: 5px;
+}
+.companyinfo-serial {
+  /* border: 1px solid blue; */
+  height: 5vh;
+  width: 5%;
+  font-size: 19px;
+  text-align: center;
+  margin-right: 10px;
+  padding: 7px;
+  border-radius: 5px;
+}
+.approvalCol {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#main {
+  transition: margin-left 0.5s;
+}
+#newMain {
+  margin-left: 250px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 480px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+  .topHead {
+    font-size: 12px;
+  }
+  .footerSide {
+    margin-top: 50vh;
+    height: 25px;
+  }
+  .openbtn {
+    font-size: 1.2rem;
+  }
+  .user button {
+    font-size: 1.2rem;
+  }
+  .companyContent {
+    width: fit-content;
+  }
+  .companyinfo-left {
+    font-size: 9px;
+    width: 23%;
+    text-align: left;
+    background: ivory;
+    /* border: 1px solid rgb(151, 122, 26); */
+  }
+  .websiteLink {
+    /* margin-left: 0px; */
+    padding: 0px;
+    padding-top: 10px;
+    font-size: 6px;
+  }
+  /* .companyinfo-left > a {
+    font-size: 6px;
+    padding: 0px;
+    text-decoration: none;
+  } */
+  .companyinfo-middle {
+    font-size: 9px;
+    font-family: initial;
+    border-radius: 0px;
+    width: 15%;
+  }
+  .companyinfo-serial {
+    font-family: initial;
+    width: 5%;
+    font-size: 8px;
+    background: ivory;
+  }
+  .approvalCol {
+    justify-content: space-between;
+    font-size: 8px;
+  }
+  .approvalCol > div {
+    margin: 3px;
+    font-size: 7px;
+  }
+  .Dashboard {
+    margin-top: 50px;
+  }
+  .logout {
+    margin-top: 15px;
+  }
+}
