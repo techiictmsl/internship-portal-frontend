@@ -8,7 +8,7 @@ import ResetPassword from "./components/signup_login/ResetPassword";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 import UserDashboard from "./components/UserDashboard";
-
+import NavCollap from "./components/NavCollap";
 function App() {
   return (
     <div className="App">
@@ -21,6 +21,7 @@ function App() {
           <Route path="/userdashboard" component={UserDashboard} />
           <Route path="/resetpassword" component={ResetPassword} />
           <Route path="/" exact component={Navbar} />
+          <Route path="/admindashboard" component={NavCollap} />
         </Switch>
       </Router>
     </div>
