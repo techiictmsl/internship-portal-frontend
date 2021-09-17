@@ -11,10 +11,7 @@ function NavCollap() {
   return (
     <div>
       <div className={show ? "sidebar openNav" : "sidebar"}>
-        <div
-          className="closebtn"
-          onClick={() => setShow(false)}
-        >
+        <div className="closebtn" onClick={() => setShow(false)}>
           ×
         </div>
         <div className="sidebarContent">
