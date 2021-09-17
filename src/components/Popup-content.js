@@ -37,7 +37,9 @@ export default function PopupContent() {
               onChange={(e) => setCin(e.target.value)}
             ></input>
           </form>
-          <button className="copy-button" onClick={() => handlecopy()}>copy </button>
+          <button className="copy-button" onClick={() => handlecopy()}>
+            copy{" "}
+          </button>
         </div>
         <button className="verify_button">Verify</button>
       </Popup>
