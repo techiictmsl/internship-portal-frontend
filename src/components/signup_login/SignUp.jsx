@@ -55,8 +55,8 @@ export default function SignUp() {
   return (
     <div className="signup-container">
       <div className="signup-main">
-        <h1 className="signup-heading">SIGN UP</h1>
-        <hr style={{ width: "50%" }} />
+        <h1 className="signup-heading text-3xl sm:text-4xl">SIGN UP</h1>
+        <hr style={{ width: "50%", margin: "0 auto 1em auto" }} />
         <div className="signup-content">
           <div className="signup-content-left">
             <form onSubmit={(e) => handleSubmit(e)}>
@@ -145,7 +145,7 @@ export default function SignUp() {
                         onChange={() => setProfession("student")}
                         id="student"
                       />
-                      Student
+                      <span style={{ marginLeft: "0.5em" }}>Student</span>
                     </label>
                   </div>
                   <div className="company-select">
@@ -157,7 +157,7 @@ export default function SignUp() {
                         onChange={() => setProfession("company")}
                         id="company"
                       />
-                      Company
+                      <span style={{ marginLeft: "0.5em" }}>Company</span>
                     </label>
                   </div>
                 </div>

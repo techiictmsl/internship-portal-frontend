@@ -25,8 +25,8 @@ export default function ResetPassword() {
   return (
     <div className="signup-container">
       <div className="signup-main">
-        <h1 className="signup-heading">RESET PASSWORD</h1>
-        <hr style={{ width: "50%" }} />
+        <h1 className="signup-heading text-3xl sm:text-4xl">RESET PASSWORD</h1>
+        <hr className="m-auto" style={{ width: "50%" }} />
         <div className="signup-content login-content">
           <div className="signup-content-left">
             <form onSubmit={(e) => handleSubmit(e)}>
